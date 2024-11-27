@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="dao.Plant" %>
-    <jsp:useBean id="plantDAO" class="dao.PlantDAO" scope="session" />  
+   	<%@ page import="dao.PlantDAO" %> 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -21,7 +21,8 @@
 	</div>
 	<%
 		String id = request.getParameter("id");
-		Plant plant = plantDAO.getPlantById(id);
+		PlantDAO dao = PlantDAO.getInstance();
+		Plant plant = dao.getPlantById(id);
 	%>
 	
 		<div class = "row align-items-md-stretch">

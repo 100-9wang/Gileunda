@@ -1,12 +1,11 @@
 <%@page import="dao.Plant"%>
 <%@page import="java.util.ArrayList"%>
-<jsp:useBean id="PlantDAO" class="dao.PlantDAO" scope="session"/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>   
+<%@ page import="dao.PlantDAO" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <meta charset="UTF-8">
 <title>식물 목록</title>
 </head>
@@ -21,23 +20,26 @@
 	</div>
 	</div>
 	<%
-		ArrayList<Plant> listOfPlants = PlantDAO.getAllPlants();
+		PlantDAO dao = PlantDAO.getInstance();
+		ArrayList<Plant> listOfPlants = dao.getAllPlants();
 	%>
 	<div class="row align-items-md-stretch text-center">
 	<%
 		for (int i = 0; i < listOfPlants.size(); i++) {
-			Plant plant1 = listOfPlants.get(i);
+			Plant plant = listOfPlants.get(i);
 	%>
 	<div class="col-md-4">
 	<div class="h-100 p-2">
-	<h5><b><%= plant1.getPtName() %></b></h5>
-	<p> <%= plant1.getPtCategory() %><br>
-	<p><%= plant1.getPtHeight() %><br>
-	<p><%= plant1.getPtUnit() %> 개 <br>
-	<p><%= plant1.getPtdifficulty() %><br>
-	<p><%= plant1.getPtInfo().substring(0, 60) %>...
-	<p><%= plant1.getPtPrice() %>원
-	<p><a href = "./plant.jsp?id=<%= plant1.getPtID() %>"
+	<h5><b><%= plant.getPtName() %></b></h5>
+	<p> <%= plant.getPtCategory() %><br>
+	<p><%= plant.getPtHeight() %><br>
+	<p><%= plant.getPtUnit() %> 개 <br>
+	<p><%= plant.getPtdifficulty() %><br>
+	<p><%=
+           plant.getPtInfo().substring(0, 60) 
+        %>...
+	<p><%= plant.getPtPrice() %>원
+	<p><a href = "./plant.jsp?id=<%= plant.getPtID() %>"
 	class="btn btn-secondary" role="button">상세정보</a>
 	</div>
 	</div>

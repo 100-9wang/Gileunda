@@ -6,6 +6,15 @@ public class PlantDAO {
 
 	
 	private ArrayList<Plant> listOfPlants = new ArrayList<Plant>();
+	private static PlantDAO instance = new PlantDAO();
+	
+	public static PlantDAO getInstance() {
+		return instance;
+	}
+	
+	public void addPlant(Plant plant) {
+		listOfPlants.add(plant);
+	}
 	
 	public PlantDAO () {
 		Plant plant1 = new Plant("p-1", "몬스테라", 10000);
@@ -46,10 +55,12 @@ public class PlantDAO {
 		
 	}
 	
+	// 식물 값 가져오기
 	public ArrayList<Plant> getAllPlants() {
 		return listOfPlants;
 	}
 	
+	// 식물 코드
 	public Plant getPlantById(String plantId) {
 		Plant plantByID = null;
 		
@@ -59,6 +70,11 @@ public class PlantDAO {
 					plant.getPtID().equals(plantId)) {
 				plantByID = plant;
 				break;
+			} else { 
+				if(plant == null) {
+					System.out.println("id값 null");
+					break;
+				}
 			}
 		}
 		return plantByID;

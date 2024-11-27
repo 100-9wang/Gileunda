@@ -18,7 +18,7 @@
 	</div>
 	</div>
 	
-	<form name="addPlant" action="./addPlant_process.jsp" method="post">
+	<form name="addPlant" action="addPlant_fn.jsp" method="post">
 	<div class="row align-items-md-stretch">
 	<div class="mb-3 row">
 		<label class="col-sm-2">식물 코드</label>
@@ -51,7 +51,7 @@
 	<div class="mb-3 row">
 		<label class="col-sm-2">가드닝 난이도</label>
 		<div class="col-sm-3">
-		<input class="fm-ctl" type= "text" name="ptDifficulty">
+		<input class="fm-ctl" type= "text" name="ptdifficulty">
 		</div>
 	</div>
 	
@@ -71,8 +71,8 @@
 	
 	<div class="mb-3 row">
 		<label class="col-sm-2">상세 설명</label>
-		<div class="col-sm-5">
-		<textarea name="ptInfo"rows="5" cols="50" class="fm-ctl" placeholder="100자 이상 적어주세요">
+		<div class="col-sm-4">
+		<textarea name="ptInfo" rows="3" cols="50" class="fm-ctl" placeholder="100자 이상 적어주세요">
 		</textarea>
 		</div>
 	</div>	

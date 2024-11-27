@@ -11,8 +11,10 @@ public class Plant {
 	private long ptUnit; // 재고 수량
 	private String ptdifficulty; // 난이도
 	
+	public Plant() {
+		super();
+	}
 	
-
 	public Plant(String ptID, String ptName, Integer ptPrice) {
 		this.ptID = ptID;
 		this.ptName = ptName;
