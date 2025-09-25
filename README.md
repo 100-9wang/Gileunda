@@ -161,6 +161,7 @@ JAVA 기반 JSP 웹 애플리케이션으로 식물의 상세한 정보 제공 �
 - 상품 수정2
 <img width="660" height="622" alt="Image" src="https://github.com/user-attachments/assets/f452a75d-0ffe-4215-89eb-d7e531ed51e2" />
 
+[Notion] https://www.notion.so/Gileunda-2796a2e81c4e81a288acff4da0d13fb1?source=copy_link
 ---
 
 ## 향후 개선 계획
