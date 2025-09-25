@@ -1,5 +1,3 @@
-![image.png](attachment:2b441705-7cda-430d-9ba5-fe160d5de76a:bfbf69e8-747d-4618-ac8c-d4d9f94decf5.png)
-
 # 식물 판매 쇼핑몰 (Gileunda)
 
 1인 프로젝트
